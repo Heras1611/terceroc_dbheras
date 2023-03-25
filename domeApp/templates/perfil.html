@@ -1,0 +1,19 @@
+{% extends 'inicio.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+   {% if user.is_authenticated %}
+           <center><img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmpRsRN8nK6rKFl0U4fIYgT7Tg56NQ8LSRxA&usqp=CAU" width="150" height="150" /></center>
+       <center><b>Hola {{ user.username }}!</b>
+          <br><br>
+           <a href="/domeApp" class="btn btn-info">Registro de Limpieza</a>
+
+          <br><br>
+          <a href="/salir" class="btn btn-danger">Cerrar Sesion</a>
+    {% else %}
+      <a href="/iniciarsesion" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Iniciar Sesion</a>
+      <a href="/inscribirse" class="btn btn-success">Registrate</a></center>
+    {% endif %}
+{%endblock%}
